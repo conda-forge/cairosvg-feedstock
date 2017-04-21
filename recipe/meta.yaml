@@ -13,7 +13,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not py3k or win]
   entry_points:
     - {{ name|lower }}={{ name|lower }}:main
@@ -23,7 +23,7 @@ requirements:
   build:
     - python
     - setuptools
-    - cairocffi
+    - cairo 1.14.*
     - lxml
     - cssselect
     - pillow
@@ -32,7 +32,7 @@ requirements:
     - python
     # needed for import of pkg_resources
     - setuptools
-    - cairocffi
+    - cairo 1.14.*
     - lxml
     - cssselect
     - pillow
