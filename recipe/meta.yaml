@@ -21,6 +21,7 @@ build:
 requirements:
   host:
     - python
+    - pip
     - setuptools
     - cairocffi
     - lxml
