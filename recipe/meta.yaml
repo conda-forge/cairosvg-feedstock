@@ -16,26 +16,26 @@ build:
   skip: true  # [not py3k or win]
   entry_points:
     - {{ name|lower }}={{ name|lower }}:main
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install --no-deps --ignore-installed .
 
 requirements:
-  build:
+  host:
     - python
     - setuptools
     - cairocffi
     - lxml
-    - cssselect
+    - cssselect2
     - pillow
-    - tinycss
+    - tinycss2
   run:
     - python
     # needed for import of pkg_resources
     - setuptools
     - cairocffi
     - lxml
-    - cssselect
+    - cssselect2
     - pillow
-    - tinycss
+    - tinycss2
 
 test:
   imports:
@@ -48,6 +48,7 @@ about:
   license: LGPLv3+
   summary: 'A Simple SVG Converter based on Cairo'
   license_family: LGPL
+  license_file: COPYING
   doc_url: http://www.cairosvg.org/documentation
   dev_url: https://github.com/Kozea/CairoSVG
 
