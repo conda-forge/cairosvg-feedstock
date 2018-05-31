@@ -28,6 +28,7 @@ requirements:
     - cssselect2
     - pillow
     - tinycss2
+    - defusedxml
   run:
     - python
     # needed for import of pkg_resources
@@ -37,6 +38,7 @@ requirements:
     - cssselect2
     - pillow
     - tinycss2
+    - defusedxml
 
 test:
   imports:
