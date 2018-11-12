@@ -16,13 +16,12 @@ build:
   skip: true  # [not py3k or win]
   entry_points:
     - cairosvg = cairosvg:main
-  script: "{{ PYTHON }} -m pip install . -vvv"
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
 
 requirements:
   host:
     - python
     - pip
-    - cairocffi
     - pytest-runner
   run:
     - python
