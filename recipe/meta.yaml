@@ -12,29 +12,20 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1000
   skip: true  # [not py3k or win]
   entry_points:
-    - {{ name|lower }}={{ name|lower }}:main
-  script: python -m pip install --no-deps --ignore-installed .
+    - cairosvg = cairosvg:main
+  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
 
 requirements:
   host:
     - python
     - pip
-    - setuptools
-    - cairocffi
-    - lxml
-    - cssselect2
-    - pillow
-    - tinycss2
-    - defusedxml
+    - pytest-runner
   run:
     - python
-    # needed for import of pkg_resources
-    - setuptools
     - cairocffi
-    - lxml
     - cssselect2
     - pillow
     - tinycss2
