@@ -39,10 +39,10 @@ test:
 
 about:
   home: http://www.cairosvg.org/
-  license: LGPLv3+
-  summary: 'A Simple SVG Converter based on Cairo'
+  license: LGPL-3.0
   license_family: LGPL
-  license_file: COPYING
+  license_file: LICENSE
+  summary: 'A Simple SVG Converter based on Cairo'
   doc_url: http://www.cairosvg.org/documentation
   dev_url: https://github.com/Kozea/CairoSVG
 
