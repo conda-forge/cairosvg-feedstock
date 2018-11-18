@@ -15,7 +15,7 @@ build:
   number: 1000
   skip: true  # [not py3k or win]
   entry_points:
-    - cairosvg = cairosvg:main
+    - cairosvg = cairosvg.__main__:main
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
 
 requirements:
@@ -35,7 +35,7 @@ test:
   imports:
     - cairosvg
   commands:
-    - cairosvg --help > /dev/null
+    - cairosvg --help
 
 about:
   home: http://www.cairosvg.org/
