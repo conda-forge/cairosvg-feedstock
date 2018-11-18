@@ -1,6 +1,6 @@
 {% set name = "CairoSVG" %}
-{% set version = "2.1.3" %}
-{% set sha256 = "e512f555f576b6462b04b585c4ba4c09a43f3a8fec907b60ead21d7d00c550e9" %}
+{% set version = "2.2.1" %}
+{% set sha256 = "93c5b3204478c4e20c4baeb33807db5311b4420c21db2f21034a6deda998cb14" %}
 
 package:
   name: {{ name|lower }}
@@ -15,7 +15,7 @@ build:
   number: 1000
   skip: true  # [not py3k or win]
   entry_points:
-    - cairosvg = cairosvg:main
+    - cairosvg = cairosvg.__main__:main
   script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
 
 requirements:
@@ -35,14 +35,14 @@ test:
   imports:
     - cairosvg
   commands:
-    - cairosvg --help > /dev/null
+    - cairosvg --help
 
 about:
   home: http://www.cairosvg.org/
-  license: LGPLv3+
-  summary: 'A Simple SVG Converter based on Cairo'
+  license: LGPL-3.0
   license_family: LGPL
-  license_file: COPYING
+  license_file: LICENSE
+  summary: 'A Simple SVG Converter based on Cairo'
   doc_url: http://www.cairosvg.org/documentation
   dev_url: https://github.com/Kozea/CairoSVG
 
