@@ -1,6 +1,6 @@
 {% set name = "CairoSVG" %}
-{% set version = "2.2.1" %}
-{% set sha256 = "93c5b3204478c4e20c4baeb33807db5311b4420c21db2f21034a6deda998cb14" %}
+{% set version = "2.3.0" %}
+{% set sha256 = "66f333ef5dc79fdfbd3bbe98adc791b1f854e0461067d202fa7b15de66d517ec" %}
 
 package:
   name: {{ name|lower }}
@@ -12,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   skip: true  # [not py3k or win]
   entry_points:
     - cairosvg = cairosvg.__main__:main
