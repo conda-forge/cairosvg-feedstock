@@ -10,7 +10,7 @@ source:
   sha256: 66f333ef5dc79fdfbd3bbe98adc791b1f854e0461067d202fa7b15de66d517ec
 
 build:
-  number: 0
+  number: 1
   skip: true  # [py2k]
   entry_points:
     - cairosvg = cairosvg.__main__:main
