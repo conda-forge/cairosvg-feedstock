@@ -1,22 +1,20 @@
 {% set name = "CairoSVG" %}
 {% set version = "2.3.0" %}
-{% set sha256 = "66f333ef5dc79fdfbd3bbe98adc791b1f854e0461067d202fa7b15de66d517ec" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  fn: {{ name }}-{{ version }}.tar.gz
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: 66f333ef5dc79fdfbd3bbe98adc791b1f854e0461067d202fa7b15de66d517ec
 
 build:
   number: 0
-  skip: true  # [not py3k or win]
+  skip: true  # [py2k]
   entry_points:
     - cairosvg = cairosvg.__main__:main
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed --no-cache-dir -vv"
+  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
