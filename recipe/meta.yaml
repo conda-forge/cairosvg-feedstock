@@ -1,5 +1,5 @@
 {% set name = "CairoSVG" %}
-{% set version = "2.3.0" %}
+{% set version = "2.3.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,22 +7,22 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 66f333ef5dc79fdfbd3bbe98adc791b1f854e0461067d202fa7b15de66d517ec
+  sha256: b5b67bc598f73693490b1bed8bc6e0ae447cf3a6d986c285db309343b90786ee
 
 build:
-  number: 1
-  skip: true  # [py2k]
+  number: 0
+  noarch: python
   entry_points:
     - cairosvg = cairosvg.__main__:main
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3
     - pip
     - pytest-runner
   run:
-    - python
+    - python >=3
     - cairocffi
     - cssselect2
     - pillow
