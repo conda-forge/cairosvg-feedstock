@@ -11,18 +11,18 @@ source:
 
 build:
   number: 0
-  skip: true  # [py2k]
+  noarch: python
   entry_points:
     - cairosvg = cairosvg.__main__:main
   script: "{{ PYTHON }} -m pip install . --no-deps -vv"
 
 requirements:
   host:
-    - python
+    - python >=3
     - pip
     - pytest-runner
   run:
-    - python
+    - python >=3
     - cairocffi
     - cssselect2
     - pillow
