@@ -14,15 +14,15 @@ build:
   noarch: python
   entry_points:
     - cairosvg = cairosvg.__main__:main
-  script: "{{ PYTHON }} -m pip install . --no-deps -vv"
+  script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3
+    - python >=3.5
     - pip
     - pytest-runner
   run:
-    - python >=3
+    - python >=3.5
     - cairocffi
     - cssselect2
     - pillow
