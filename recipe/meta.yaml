@@ -37,6 +37,7 @@ test:
   commands:
     - cairosvg --help
     - cairosvg test.svg -o test.png
+    - test -f test.png
 
 about:
   home: http://www.cairosvg.org/
