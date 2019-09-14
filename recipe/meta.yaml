@@ -30,10 +30,13 @@ requirements:
     - defusedxml
 
 test:
+  files:
+    - test.svg
   imports:
     - cairosvg
   commands:
     - cairosvg --help
+    - cairosvg test.svg -o test.png
 
 about:
   home: http://www.cairosvg.org/
