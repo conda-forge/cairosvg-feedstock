@@ -1,5 +1,5 @@
 {% set name = "CairoSVG" %}
-{% set version = "2.4.2" %}
+{% set version = "1.0.22" %}
 
 package:
   name: {{ name|lower }}
@@ -7,27 +7,27 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4e668f96653326780036ebb0a9ff2bb59a8443d7bcfc51a14aab77b57a8e67ad
+  sha256: f66e0f3a2711d2e36952bb370fcd45837bfedce2f7882935c46c45c018a21557
 
 build:
   number: 0
   noarch: python
   entry_points:
-    - cairosvg = cairosvg.__main__:main
+    - cairosvg = cairosvg.__init__:main
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
-    - python >=3.5
+    - python
     - pip
     - pytest-runner
   run:
-    - python >=3.5
+    - python
+    - pycairo
     - cairocffi
-    - cssselect2
-    - pillow
-    - tinycss2
-    - defusedxml
+    - lxml
+    - cssselect
+    - tinycss
 
 test:
   imports:
@@ -39,7 +39,7 @@ about:
   home: http://www.cairosvg.org/
   license: LGPL-3.0
   license_family: LGPL
-  license_file: LICENSE
+  license_file: COPYING
   summary: 'A Simple SVG Converter based on Cairo'
   doc_url: http://www.cairosvg.org/documentation
   dev_url: https://github.com/Kozea/CairoSVG
