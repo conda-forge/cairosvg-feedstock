@@ -30,11 +30,12 @@ requirements:
     - defusedxml
 
 test:
+  requires:
+    - git
   imports:
     - cairosvg
   commands:
     - cairosvg --help
-    - conda install -c conda-forge git -y
     - git clone --single-branch --branch {{ version }} https://github.com/Kozea/CairoSVG.git
 #    - find /test_non_regression/svg -maxdepth 1 -type f -name *.svg -exec cairosvg {} -o {}.png \;
     - for %%v in (/test_non_regression/svg/*.svg) do cairosvg "/test_non_regression/svg/%%v" -o "%%v.png"
