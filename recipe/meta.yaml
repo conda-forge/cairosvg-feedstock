@@ -10,7 +10,7 @@ source:
   sha256: 4e668f96653326780036ebb0a9ff2bb59a8443d7bcfc51a14aab77b57a8e67ad
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - cairosvg = cairosvg.__main__:main
@@ -21,6 +21,9 @@ requirements:
     - python >=3.5
     - pip
     - pytest-runner
+    - pytest-cov
+    - pytest-flake8
+    - pytest-isort
   run:
     - python >=3.5
     - cairocffi
@@ -34,6 +37,7 @@ test:
     - cairosvg
   commands:
     - cairosvg --help
+    - pytest cairosvg/test_api.py
 
 about:
   home: http://www.cairosvg.org/
