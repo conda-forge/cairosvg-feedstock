@@ -35,7 +35,6 @@ test:
   commands:
     - cairosvg --help
     - git clone --single-branch --branch {{ version }} https://github.com/Kozea/CairoSVG.git
-    - cairosvg cairosvg/test_non_regression/svg/toap04.svg -o test.png
     - find /cairosvg/test_non_regression/svg -maxdepth 1 -type f -name *.svg -exec cairosvg {} -o {}.png \;
 #    - for %%v in (cairosvg/test_non_regression/svg/*.svg) do cairosvg "cairosvg/test_non_regression/svg/%%v" -o "%%v.png"
 
