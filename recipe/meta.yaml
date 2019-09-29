@@ -6,8 +6,8 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 4e668f96653326780036ebb0a9ff2bb59a8443d7bcfc51a14aab77b57a8e67ad
+  git_url: https://github.com/Kozea/CairoSVG.git
+  git_rev: {{ version }}
 
 build:
   number: 1
@@ -21,7 +21,6 @@ requirements:
     - python >=3.5
     - pip
     - pytest-runner
-    - git
   run:
     - python >=3.5
     - cairocffi
@@ -31,12 +30,12 @@ requirements:
     - defusedxml
 
 test:
+  source_files:
+    - /cairosvg/test_non_regression/svg/*.svg
   imports:
     - cairosvg
   commands:
     - cairosvg --help
-    - conda install -c conda-forge git -y
-    - git clone --single-branch --branch {{ version }} https://github.com/Kozea/CairoSVG.git
     - find /cairosvg/test_non_regression/svg -maxdepth 1 -type f -name *.svg -exec cairosvg {} -o {}.png \;
 #    - for %%v in (cairosvg/test_non_regression/svg/*.svg) do cairosvg "cairosvg/test_non_regression/svg/%%v" -o "%%v.png"
 
