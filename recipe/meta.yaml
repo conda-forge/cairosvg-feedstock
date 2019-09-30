@@ -32,6 +32,7 @@ requirements:
 test:
   requires:
     - git
+    - pip
   imports:
     - cairosvg
   commands:
