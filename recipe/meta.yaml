@@ -27,7 +27,7 @@ requirements:
     - cssselect2
     - pillow
     - tinycss2
-    - defusedxml >=0.6.0
+    - defusedxml
 
 test:
   requires:
@@ -36,7 +36,6 @@ test:
   imports:
     - cairosvg
   commands:
-    - pip install cssselect2==0.2.2
     - cairosvg --help
     - git clone --single-branch --branch {{ version }} https://github.com/Kozea/CairoSVG.git
     - cd CairoSVG/test_non_regression/svg # Needed for SVGs that use relative paths
