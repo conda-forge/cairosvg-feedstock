@@ -41,12 +41,12 @@ test:
     - git clone --single-branch --branch {{ version }} https://github.com/Kozea/CairoSVG.git
     - cd CairoSVG/test_non_regression/svg
     - find ./ -maxdepth 1 -type f -name '*.svg' -exec echo {} \; -exec cairosvg -u {} -o {}.png \;
-    - find ./ -maxdepth 1 -type f -name '*.svg' -exec test -s {}.png || -exec touch a_test_failed \;
+    - find ./ -maxdepth 1 -type f -name '*.svg' -exec test -s {}.png \; || -exec touch a_test_failed \;
     - test ! a_test_failed
 #    - cairosvg CairoSVG/test_non_regression/svg/toap04.svg -o test.png
 #    - test -s test.png
-#    - for %%v in (cairosvg/test_non_regression/svg/*.svg) do (echo %%v & cairosvg -u "cairosvg/test_non_regression/svg/%%v" -o "%%v.png")
-#    - for %%v in (cairosvg/test_non_regression/svg/*.svg) do test -s "%%v.png"
+#    - for %%v in (*.svg) do (echo %%v & cairosvg -u "%%v" -o "%%v.png")
+#    - for %%v in (*.svg) do test -s "%%v.png"
 
 about:
   home: http://www.cairosvg.org/
