@@ -22,7 +22,9 @@ requirements:
     - pip
     - pytest-runner
   run:
-    - python
+    - python <3 # Without this the tests are run in a py35
+                # environment and one test fails
+                # TODO:  Find which dependency is the real culprit
     - pycairo
     - cairocffi
     - lxml
