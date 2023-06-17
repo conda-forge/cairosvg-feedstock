@@ -1,5 +1,5 @@
 {% set name = "CairoSVG" %}
-{% set version = "2.6.0" %}
+{% set version = "2.7.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: d5ec93e90101b3b6e82aa245d0546ee9b016cfda0b6344675159830d853d5d04
+  sha256: ac4dc7c1d38b3a15717db2633a3a383012e0be664c727c911637e6af6a49293c
 
 build:
   number: 0
