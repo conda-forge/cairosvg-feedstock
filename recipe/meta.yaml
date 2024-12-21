@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 432531d72347291b9a9ebfb6777026b607563fd8719c46ee742db0aef7271ba0
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - cairosvg = cairosvg.__main__:main
@@ -18,11 +18,11 @@ build:
 
 requirements:
   host:
-    - python >=3.5
+    - python {{ python_min }}
     - pip
     - pytest-runner
   run:
-    - python >=3.5
+    - python >={{ python_min }}
     - cairocffi
     - cssselect2
     - pillow
@@ -30,6 +30,8 @@ requirements:
     - defusedxml
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - cairosvg
   commands:
