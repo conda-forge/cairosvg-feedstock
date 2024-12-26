@@ -21,6 +21,7 @@ requirements:
     - python {{ python_min }}
     - pip
     - pytest-runner
+    - setuptools
   run:
     - python >={{ python_min }}
     - cairocffi
@@ -39,8 +40,7 @@ test:
 
 about:
   home: http://www.cairosvg.org/
-  license: LGPL-3.0
-  license_family: LGPL
+  license: 	LGPL-3.0-only
   license_file: LICENSE
   summary: A Simple SVG Converter based on Cairo
   doc_url: http://www.cairosvg.org/documentation
