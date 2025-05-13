@@ -5,7 +5,7 @@ Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/cairosvg-feedst
 
 Home: http://www.cairosvg.org/
 
-Package license: LGPL-3.0
+Package license: LGPL-3.0-only
 
 Summary: A Simple SVG Converter based on Cairo
 
