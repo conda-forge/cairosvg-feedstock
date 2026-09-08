@@ -38,7 +38,9 @@ tests:
   - python:
       imports:
         - cairosvg
-      python_version: ${{ python_min }}.*
+      python_version: 
+        - ${{ python_min }}.*
+        - "*"
   - requirements:
       run:
         - python ${{ python_min }}.*
